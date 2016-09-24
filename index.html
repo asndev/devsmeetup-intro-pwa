@@ -13,6 +13,8 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link rel="stylesheet" href="custom.css">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -36,21 +38,27 @@
 
 				<section>
 					<h2>Motivation</h2>
-					<ul>
-						<li>Distributing native software is hard</li>
-						<li>Time on mobile device
-							<ul><li>13% Mobile Web VS 87% Apps*</li></ul>
-							<!-- footer quelle zu: comSource Mobile Metrix -->
-						</li>
-						<li>80% of time spent in users' top 3 apps</li>
-						<li>Monthly Unique Visitors
-							<ul><li>3.3 Apps VS 8.9 Mobile Web</li></ul>
-						</li>
-						<li>Acquisition Cost
-							<ul><li>"Selio": 4 Eur on Android App VS 0.35 Eur on Mobile Webb</li></ul> 
-						</li>
-						
-					</ul>
+					<div class="splitview">
+						<div>
+							<img src="https://avatars0.githubusercontent.com/u/1215837?v=3&s=400">
+							<p>Lorem Ipsum</p>
+						</div>
+						<ul>
+							<li>Distributing native software is hard</li>
+							<li>Time on mobile device
+								<ul><li>13% Mobile Web VS 87% Apps*</li></ul>
+								<!-- footer quelle zu: comSource Mobile Metrix -->
+							</li>
+							<li>80% of time spent in users' top 3 apps</li>
+							<li>Monthly Unique Visitors
+								<ul><li>3.3 Apps VS 8.9 Mobile Web</li></ul>
+							</li>
+							<li>Acquisition Cost
+								<ul><li>"Selio": 4 Eur on Android App VS 0.35 Eur on Mobile Webb</li></ul>
+							</li>
+						</ul>
+					</div>
+
 				</section>
 
 				<section>
@@ -159,8 +167,9 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+				width: 1500,
 
-    		transition: 'convex',
+    			transition: 'convex',
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
