@@ -10,6 +10,7 @@
 		<!-- TODO: blood oder moon? -->
 		<link rel="stylesheet" href="css/theme/blood.css">
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -24,16 +25,33 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
+
+	<!-- TODO: Idee: Wie wäre es wenn wir die Präsentation einfach Progressive machen. Sollte easy sein mit splashscree
+	 und service worker für offline. Dann können die leute vielleicht interaktiv es auf ihrem smartphone mal testen -->
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				
-				<section>
+				<section id="slide1">
 					<h2>Introduction to Progressive Web Apps</h2>
-					<!-- TODO: music einbauen: https://soundcloud.com/terramonk/pwa-amsterdam-2016 ? -->
-					<!-- TODO: add names and company and twitter -->
-					<p>Anton Stepan, Patronas GmbH, @asndev</p>
-					<p>Julien Thoma, Reservix Gmbh, @hajuko</p>
+					<div class="splitview">
+						<!-- TODO: music einbauen: https://soundcloud.com/terramonk/pwa-amsterdam-2016 ? -->
+						<!-- TODO: add names and company and twitter -->
+						<!-- TODO: companay websites? Stellenagebote link am ende der Präs :) ?-->
+						<div>
+							<p>Julien Thoma, Reservix GmbH</p>
+							<p><i class="fa fa-twitter"></i>@julien_thoma</p>
+							<p><i class="fa fa-github"></i>@julienthoma</p>
+						</div>
+						<img src="http://devsmeetup.de/assets/img/julienanton.png">
+						<div>
+							<p>Anton Stepan, Patronas GmbH</p>
+							<p><i class="fa fa-twitter"></i>@asndev</p>
+							<p><i class="fa fa-github"></i>@asndev</p>
+
+						</div>
+
+					</div>
 				</section>
 
 				<section>

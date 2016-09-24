@@ -2,3 +2,17 @@
     display: flex;
     justify-content: space-between;
 }
+
+#slide1 img {
+    border-radius: 50%;
+    height: 300px;
+}
+
+#slide1 p {
+    font-size: 30px;
+    text-align: left;
+}
+
+#slide1 i {
+    margin-right: 10px;
+}
