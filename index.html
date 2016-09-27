@@ -154,23 +154,93 @@
 				</section>
 
 				<section>
-					<h2>Technologies</h2>
-					Julien ab hier?
+					<h2>Make an existing app progressive</h2>
+					<ul>
+						<li class="fragment">manifest.json</li>
+						<li class="fragment">Application Shell Model</li>
+						<li class="fragment">Service Workers</li>
+					</ul>
 				</section>
-				
+
+				<section>
+					<h3>manifest.json</h3>
+
+					<pre>
+                        <code data-trim data-noescape style="line-height: 30px; max-height: 600px">
+{
+    "name": "Overheroes",
+    "short_name": "heroes",
+    "gcm_sender_id": "719284092984",
+    "icons": [{
+        "src": "icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }, {
+        "src": "icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    }],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#3E4EB8",
+    "theme_color": "#2F3BA2",
+    ​​"orientation": "portrait-primary"
+}
+
+                        </code>
+                    </pre>
+				</section>
+
+				<section>
+					<img src="img/homescreen.png" style="width: 380px">
+				</section>
+
+				<section>
+					<img src="img/splash.png" style="width: 380px">
+				</section>
+
+				<section>
+					<img src="img/appexample.png" style="width: 380px">
+				</section>
+
+				<section>
+					<img src="img/singleapp.png" style="width: 380px">
+				</section>
+
+				<section>
+					<h2>Application Shell Model</h2>
+					<ul>
+						<li class="fragment">minimal HTML, CSS, and JavaScript powering a user interface</li>
+					</ul>
+				</section>
+
+				<section style="position: relative">
+					<img src="img/appshell-1.jpg" style="width: 55%">
+				</section>
+
 				<section>
 					<h2>Service Workers</h2>
-					Julien ab hier?
+					<ul>
+						<li class="fragment">script that runs in your browser</li>
+						<li class="fragment">has no DOM access</li>
+						<li class="fragment">not blocking the main thread</li>
+						<li class="fragment">ability to intercept and handle network requests</li>
+						<li class="fragment">offline capabilities</li>
+						<li class="fragment">push notifications</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Manifest.json</h2>
-					Julien ab hier?
+					<img src="img/sw_model.png" style="width: 60%"/>
 				</section>
 
 				<section>
-					<h2>App Shell Architecture</h2>
-					Julien ab hier?
+					<h2>Events</h2>
+					<ul>
+						<li>install</li>
+						<li>fetch</li>
+						<li>activate</li>
+					</ul>
 				</section>
 
 				<section>
