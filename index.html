@@ -57,16 +57,31 @@
 					<section>
 						<h1>Motivation</h1>
 					</section>
+					<section>
+						<h2>Mobile is: responsive</h2>
+						<br/><br/>
+						<h2>Native is: Fast, Better UX, Offline access</h2>
+					</section>
 					<section data-background-image="https://media.giphy.com/media/tdoUaMmgtgSqc/giphy.gif">
 						<h2>Distributing native software <br/>is <u>hard</u>.</h2>
+					</section>
+					<section>
+						<h2>App Abandonment</h2>
+						<h1 class="fragment">23%</h1>
+						<!-- http://info.localytics.com/blog/23-of-users-abandon-an-app-after-one-use -->
+					</section>
+					<section>
+						<h2>80% of app usage is done</h2>
+						<h1 class="fragment">on three apps</h1>
+					</section>
+					<section data-background-image="https://media.giphy.com/media/xTiTnwLNe6sSsySBNu/giphy.gif">
+						<h2>App Store discoverability?</h2>
+						<h1 class="fragment">lol</h1>
 					</section>
 					<section data-background-image="https://media.giphy.com/media/NjRp55nfUo7MA/giphy.gif">
 						<h2>Time on mobile device</h2>
 						<h3>13% Mobile Web</h3>
 						<h3>87% Apps</h3>
-					</section>
-					<section>
-						<h2>80% of time spent in users' top 3 apps</h2>
 					</section>
 				</section>
 
@@ -99,15 +114,30 @@
 				</section>
 
 				<section>
+					<h2>The Web is:</h2>
+					<h4 class="fragment">Easily sharable (url + seo optimized)</h4>
+					<h4 class="fragment">Not owned by any one company</h4>
+					<h4 class="fragment">Billions of users</h4>
+					<h2 class="fragment">But:</h2>
+					<h4 class="fragment">No Offline Support</h4>
+					<h4 class="fragment">No Homescreen App</h4>
+					<h4 class="fragment">Can be slow and janky</h4>
+				</section>
+
+				<section data-background-image="https://media.giphy.com/media/1Moe2Us9pVV60/giphy.gif">
+					<h1>Progressive<br/>Web<br/>Apps</h1>
+				</section>
+
+				<section>
 					<h2>Progressive Web Apps?</h2>
-					<h5 class="fragment">-> Nothing new, just bringing everything together</h5>
+					<h5 class="fragment">→ Nothing new, just bringing everything together</h5>
 					<br/>
 					<ul class="omg-list">
 						<li class="fragment">Responsive</li>
 						<li class="fragment">Secure <i>(https)</i></li>
-						<li class="fragment">Fast <i>(smooth animations/scrolling, http2)</i></li>
+						<li class="fragment">Fast <i>(smooth animations/scrolling, RAIL, http2)</i></li>
 						<li class="fragment">Instant Loading & Offline available <i>(sw)</i></li>
-						<li class="fragment">Home Screen <i>(manifest)</i></li>
+						<li class="fragment">Home Screen <i>(manifest.json)</i></li>
 						<li class="fragment">Push Notifications <i>(sw push manager)</i></li>
 					</ul>
 				</section>
@@ -145,7 +175,54 @@
 
 				<section>
 					<h2>Push Notifications</h2>
-					Anton
+					<section>
+						<div class="splitview">
+						<ul style="padding-top:140px;">
+							<li><strong>Push</strong>: action from server to serviceworker</li>
+							<li><strong>Notification</strong>: serviceWorker.showNotification()</li>
+							<li><strong>Messaging Server</strong>: eg <a href="https://firebase.google.com/docs/cloud-messaging/">Firebase Cloud Messaging</a></li>
+						</ul>
+						<img src="https://mobiforge.com/files/push-notifications-2.png">
+					</section>
+
+					<section>
+						<h5>Sending/Receiving Messags</h5>
+						<ul>
+							<li><strong>Configuration</strong>
+								<ol>
+									<li class="fragment">register a project at a messaging server (project id, api key)</li>
+									<li class="fragment">set <code>gcm_sender_id</code> in <code>manifest.json</code></li>
+									<li class="fragment">add event listener for 'push' in service worker</li>
+									<li class="fragment">send message</li>
+								</ol>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h5>Event Listener for Push</h5>
+						<pre>
+							<code>
+	// sw.js
+	self.addEventListener('push', function(event) {
+	  const title = 'Push message';
+		const body = event.data.text();
+
+	  event.waitUntil(
+	    self.registration.showNotification(title, {
+	      body: body,
+	      icon: 'images/icon-192x192.png',
+	      badge: 'images/logo-72x72.png'
+	   }));
+	});
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2><a href="https://gauntface.github.io/simple-push-demo/">Push Demo</a></h2>
+					</section>
+
 				</section>
 
 				<section>
