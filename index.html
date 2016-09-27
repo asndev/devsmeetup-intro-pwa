@@ -206,7 +206,7 @@
 	// sw.js
 	self.addEventListener('push', function(event) {
 	  const title = 'Push message';
-		const body = event.data.text();
+	  const body = event.data.text();
 
 	  event.waitUntil(
 	    self.registration.showNotification(title, {
