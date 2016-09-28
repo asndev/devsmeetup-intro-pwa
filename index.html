@@ -6,6 +6,8 @@
 
 		<title>Devsmeetup</title>
 
+        <link rel="manifest" href="manifest.json">
+
 		<link rel="stylesheet" href="css/reveal.css">
 		<!-- TODO: blood oder moon? -->
 		<link rel="stylesheet" href="css/theme/blood.css">
@@ -256,13 +258,11 @@
 <pre>
 <code>
 // index.html
-<script>
     if('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('/sw.js')
             .then(function() { console.log("SW Registered"); });
     }
-</script>
 </code>
 </pre>
 
@@ -381,9 +381,14 @@ self.addEventListener('fetch', event => {
 					<a href="https://jakearchibald.github.io/isserviceworkerready/index.html">Serviceworker Ready?</a>
 				</section>
 
-				<section>
-					<h1>Demo</h1>
-				</section>
+                <section>
+                    <h2>Contra</h2>
+                    <ul>
+                        <li class="fragment">cache not reliable</li>
+                        <li class="fragment">browser may clear the cache</li>
+                        <li class="fragment">not working for ios right now</li>
+                    </ul>
+                </section>
 
 				<section>
 					<h3>Tooling</h3>
@@ -434,5 +439,13 @@ self.addEventListener('fetch', event => {
 				]
 			});
 		</script>
+
+        <script>
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                        .register('/sw.js')
+                        .then(function() { console.log("SW Registered"); });
+            }
+        </script>
 	</body>
 </html>
