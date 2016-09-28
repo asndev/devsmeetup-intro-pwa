@@ -162,6 +162,14 @@
 					</ul>
 				</section>
 
+                <section>
+                    <h2>Existing App</h2>
+                    <h5>Overheroes</h5>
+                    <aside class="notes">
+                        Overheroes basic version zeigen. Vielleicht ganz kurz den Code zeigen.
+                    </aside>
+                </section>
+
 				<section>
 					<h3>manifest.json</h3>
 
@@ -242,6 +250,77 @@
 						<li>activate</li>
 					</ul>
 				</section>
+
+				<section>
+					<h4>register service worker</h4>
+<pre>
+<code>
+// index.html
+<script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then(function() { console.log("SW Registered"); });
+    }
+</script>
+</code>
+</pre>
+
+				</section>
+
+				<section>
+					<h4>install</h4>
+
+<pre>
+<code>
+self.addEventListener('install', function(e) {
+    e.waitUntil(
+        caches.open('overheroes').then(function(cache) {
+            return cache.addAll([
+                '/',
+                '/index.html',
+                '/heroes',
+                '/css/overheroes.css',
+                '/js/overheroes.js'
+            ]);
+        })
+    );
+});
+</code>
+</pre>
+				</section>
+
+                <section>
+                    <h4>activate</h4>
+<pre>
+<code>
+self.addEventListener('activate', event => {
+    // …delete old caches…
+});
+</code>
+</pre>
+                </section>
+
+                <section>
+                    <h4>fetch</h4>
+<pre>
+<code>
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => response || fetch(event.request))
+    );
+});
+</code>
+</pre>
+                </section>
+
+                <section>
+                    <h2>Making Overheroes progressive</h2>
+                    <aside class="notes">
+                        Overheroes step by step.
+                    </aside>
+                </section>
 
 				<section>
 					<h2>Push Notifications</h2>
